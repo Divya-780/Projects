@@ -34,7 +34,16 @@ def add_event():
     cur.execute(query)
     query="insert into events values('Teju',6,'engagement','East-godavari','2021-3-15 12:30:00')"
     cur.execute(query)
-    
+    query="insert into events values('Ramya',7,'birthday_event','tenali','2021-10-11 12:0:00')"
+    cur.execute(query)
+    query="insert into events values('sravanthi',8,'marriage_event','vuyyuru','2026-12-25 8:25:00')"
+    cur.execute(query)
+    query="insert into events values('sri',9,'fest_event','challapalli','2021-12-30 1:00:00')"
+    cur.execute(query)
+    query="insert into events values('Reethu',10,'wedding_event','Vijayawada','2022-3-10 9:30:00')"
+    cur.execute(query)
+    query="insert into events values('chinna',11,'birthday_event','SKLM','2023-3-15 1:0:00')"
+    cur.execute(query)
     con.commit()
     cur.close()
     con.close()
