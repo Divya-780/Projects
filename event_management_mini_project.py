@@ -1,13 +1,15 @@
-import MySQLdb as db
+import MySQLdb as db #importing MySQLdb
+#establishing connection to local host 
 con=db.connect(host="localhost",user="root",password="")
 cur=con.cursor()
-
+#creating database
 def createdb():
     s="create database event_management_db"
     cur.execute(s)
     cur.close()
     con.close()
     print("Database is created successfully")
+ #creating table in database
 def create_table():
     con=db.connect(host="localhost",user="root",password="",database="event_management_db")
     cur=con.cursor()
@@ -16,6 +18,7 @@ def create_table():
     cur.close()
     con.close()
     print("table created successfully")
+ #adding events to created table
 def add_event():
     con=db.connect(host="localhost",user="root",password="",database="event_management_db")
     cur=con.cursor()
@@ -36,6 +39,7 @@ def add_event():
     cur.close()
     con.close()
     print("rows are inserted")
+ #updating events in a table
 def update_event():
     con=db.connect(host="localhost",user="root",password="",database="event_management_db")
     cur=con.cursor()
@@ -45,6 +49,7 @@ def update_event():
     cur.close()
     con.close()
     print("updated")
+ #deleting an events in a table
 def delete_event():
     con=db.connect(host="localhost",user="root",password="",database="event_management_db")
     cur=con.cursor()
@@ -54,6 +59,7 @@ def delete_event():
     cur.close()
     con.close()
     print("deleted")
+ #dispalying all events
 def display_event():
     con=db.connect(host="localhost",user="root",password="",database="event_management_db")
     cur=con.cursor()
@@ -70,6 +76,7 @@ def display_event():
         for j in i:
             print(j,end=",")
         print()
+ #searching an event_type by name
 def search_by_event_type_and_name(name,event_type):
     con=db.connect(host="localhost",user="root",password="",database="event_management_db")
     cur=con.cursor()
@@ -82,6 +89,7 @@ def search_by_event_type_and_name(name,event_type):
         print("search name and event not here")
     cur.close()
     con.close()
+#upcoming events in next 7 days
 def next_7_days_upcoming():
     con=db.connect(host="localhost",user="root",password="",database="event_management_db")
     cur=con.cursor()
@@ -95,7 +103,7 @@ def next_7_days_upcoming():
     cur.close()
     con.close()
 
-
+#user interaction  by selecting an option in command prompt
 while True:
     print("1.create Database")
     print("2.create table")
